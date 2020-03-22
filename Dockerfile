@@ -10,7 +10,7 @@ RUN apk add --no-cache \
     | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
     | sort -u) \
     && apk add --no-cache --virtual .build-deps curl \
-    && curl -fsSL https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.0/v2ray-plugin-linux-amd64-v1.3.0.tar.gz \
+    && curl -fsSL https://73-164596259-gh.circle-artifacts.com/0/bin/v2ray-plugin-linux-amd64-v1.3.0-4-g63dd1bd.tar.gz \
     | tar -xzoC /usr/local/bin \
     && mv /usr/local/bin/v2ray-plugin_linux_amd64 /usr/local/bin/v2ray-plugin \
     && apk del .build-deps
